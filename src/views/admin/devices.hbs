@@ -1,0 +1,29 @@
+<h2 class="text-center mt-2">
+    Device List
+</h2>
+<table class="table">
+    <thead>
+        <tr class="text-center">
+            <th scope="col"></th>
+            <th scope="col">MAC Address</th>
+            <th scope="col">Username</th>
+            <th scope="col">Last active</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each devices}}
+        <tr>
+            <th scope="row" class="text-center">{{increaseIndex @index}}</th>
+            <td class="text-center">{{this.macaddress}}</td>
+            <td class="text-center">{{this.username}}</td>
+            <td class="text-center">{{formatDateTime this.lastactive}}</td>
+            <td class="text-center">
+                <a href="#" class="btn btn-link">Reset password</a>
+            </td>
+        </tr>
+        {{else}}
+        <h2>No device found!</h2>
+        {{/each}}
+    </tbody>
+</table>

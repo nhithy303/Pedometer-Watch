@@ -1,0 +1,104 @@
+<div class='col-md-3 p-2 profile-container'>
+    <img src="https://cdn-icons-png.flaticon.com/512/3237/3237472.png" class="w-50">
+    <h2>Welcome back!</h2>
+    <div class="indicator-container">
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/128/5479/5479005.png" width="50px">
+            Average steps per day
+        </div>
+        <p>{{avgSteps}}</p>
+    </div>
+    <div class="indicator-container">
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/128/5479/5479005.png" width="50px">
+            Max number
+        </div>
+        <p>{{maxSteps}}</p>
+    </div>
+    <div class="indicator-container">
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/128/5479/5479005.png" width="50px">
+            Min number
+        </div>
+        <p>{{minSteps}}</p>
+    </div>
+    {{!-- <nav class="nav flex-column sidebar">
+        <a class="nav-link text-dark active" aria-current="page" href="/dashboard">Dashboard</a>
+        <a class="nav-link text-dark" href="">Messages</a>
+        <a class="nav-link text-dark" href="">Support</a>
+        <a class="nav-link text-dark" href="">Settings</a>
+    </nav> --}}
+</div>
+<div class='col-md-9'>
+    <h2>{{detailDate today}}</h2>
+    <div class='row container-fluid p-0 m-0'>
+        <div class='col-md-6'>
+            <div class="monitor-container">
+                <img src="https://cdn-icons-png.flaticon.com/512/4881/4881875.png" class="w-25">
+                <h3>Total steps</h3>
+                <div class="big-number">
+                    {{#if todayIndicator}}{{todayIndicator.totalsteps}}{{else}}0{{/if}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="monitor-container">
+                <img src="https://cdn-icons-png.flaticon.com/512/2000/2000197.png" class="w-25">
+                <h3>Total walking time</h3>
+                <div class="big-number">
+                    {{#if todayIndicator}}{{todayIndicator.totaltime}}{{else}}0{{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h2 class="text-center mt-2">
+            Today walking routine
+        </h2>
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col"></th>
+                    <th scope="col">Start time</th>
+                    <th scope="col">End time</th>
+                    <th scope="col">Step counts</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each todayIndicator.rounds}}
+                <tr>
+                    <th scope="row" class="text-center">{{increaseIndex @index}}</th>
+                    <td class="text-center">{{this.start}}</td>
+                    <td class="text-center">{{this.end}}</td>
+                    <td class="text-center">{{this.steps}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div class="container-fluid">
+        <h2 class="text-center mt-2">
+            Walking history
+        </h2>
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col"></th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Total steps</th>
+                    <th scope="col">Total time (min)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each indicators}}
+                <tr>
+                    <th scope="row" class="text-center">{{increaseIndex @index}}</th>
+                    <td class="text-center">{{this.date}}</td>
+                    <td class="text-center">{{this.totalsteps}}</td>
+                    <td class="text-center">{{this.totaltime}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

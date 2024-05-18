@@ -1,0 +1,95 @@
+:root {
+  /* FONTS */
+
+  /* FONT SIZE */
+
+  /* COLORS */
+  --color-1: #fffbf5;
+  --color-2: #f7efe5;
+  --color-3: #c3acd0;
+  --color-4: #7743db;
+}
+
+@font-face {
+  font-family: 'Aptima';
+  src: url('/font/UTM APTIMA.TTF') format('truetype');
+}
+
+html * {
+  font-family: 'Aptima';
+}
+
+.header-container {
+  background-color: var(--color-4);
+}
+
+.header-text,
+.header-text li a {
+  color: var(--color-1);
+  font-weight: bold;
+}
+
+.header-text:hover {
+  color: var(--color-1);
+}
+
+.header-text li {
+  padding: 0 30px;
+}
+
+.footer-container {
+  background-color: var(--color-3);
+}
+
+.nav-link:hover {
+  color: var(--color-1);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+#error {
+  color: red;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.profile-container {
+  background-color: var(--color-1);
+  text-align: center;
+}
+
+.sidebar a:hover {
+  text-decoration: none;
+}
+
+.indicator-container {
+  background-color: white;
+  padding: 10px 20px;
+  margin: 10px 20px;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.indicator-container div {
+  font-size: 20px;
+}
+.indicator-container p {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.monitor-container {
+  background-color: var(--color-2);
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.big-number {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+/* style="border:1px solid black" */
