@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const connectionStr =
-  'mongodb+srv://funlish:cntt4701104@funlish.ixuxxok.mongodb.net/Pedometer?retryWrites=true&w=majority'
+const secret = require('./secret')
+const connectionStr = secret.connectionStr
 
 async function connect() {
   try {
